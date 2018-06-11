@@ -1,7 +1,7 @@
 
 FROM ubuntu:16.04
 
-RUN apt update && apt install git cmake libasan2 build-essential pkg-config clang -y
+RUN apt update && apt install git libasan2 build-essential cmake pkg-config screen libc6-dev-i386 clang valgrind bsdmainutils binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev -y
 
 #Install afl & laf
 RUN mkdir -p /tmp/afl \
