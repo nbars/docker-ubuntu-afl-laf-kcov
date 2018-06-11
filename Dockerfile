@@ -17,7 +17,11 @@ RUN mkdir -p /tmp/afl \
     && export LLVM_CONFIG=/usr/bin/llvm-config-3.8 \
     && make \
     && cd .. \
-    && make install
+    && make install \
+    && cp compare-transform-pass.so /usr/local/lib/afl/ \
+    && cp split-compares-pass.so /usr/local/lib/afl/ \
+    && cp split-switches-pass.so /usr/local/lib/afl/
+
 
 #Install kcov
 RUN cd /tmp \
